@@ -1,0 +1,221 @@
+/* PC */
+@media (min-width : 1024px) {
+    .hide-on-PC{
+        display: none;
+    }
+}
+
+
+
+
+/* Mobile  & Tablet*/
+@media (max-width : 1023px) {
+
+    :root{
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+    .header{
+        margin-bottom: 12px;
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+    }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header__logo{
+        width: 130px;
+    }
+    .header__logo-img{
+        width: 100px;
+    }
+    .header__cart{
+        text-align: right;
+        width: 70px;
+    }
+    .header__cart-list{
+        position: fixed;
+        right: 0;
+        top: var(--header-height);
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2 );
+        z-index: 10;
+    }
+    .header__cart-list::after{
+        display: none;
+    }
+    .header__cart-list::before{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 23px;
+        top:-22px;
+        left: 0;
+        padding: 0;
+        border: none;
+    }
+    .header__cart-heading{
+        margin: 10px 12px;
+    }
+    .app__main{
+        padding-top: calc( var(--header-height) + var(--category__tablet-height));
+    }
+
+ 
+}
+
+/* Tablet*/
+@media (min-width : 740px) and (max-width : 1023px) {
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart{
+        text-align: right;
+        width: 70px;
+    }
+    .category__tablet{
+        display: flex;   
+    }
+
+
+}
+
+/* mobile*/
+@media (max-width : 739px) {
+    .hide-on-mobile{
+        display: none;
+    }
+    .category__tablet{
+        display: flex;   
+    }
+
+    .header-with-search{
+        justify-content: space-between;
+    }
+    .header__logo,
+    .header__cart {
+        width: unset;
+    }
+    .header__search{
+        position: fixed;
+        top: 68px;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        height: 47px;
+        box-shadow: 0 1px 2px #ccc;
+        padding: 0 12px 0 0;
+        animation: fadein linear 0.2s;
+        display: none;
+    }
+
+    @keyframes fadein{
+        from{
+            opacity: 0;
+            top: calc(64px /2);
+        }
+        to{
+            opacity: 1
+            ;
+            top: 64px;
+            
+        }
+    
+    }
+    .header__search-checkbox:checked ~ .header__search{
+        display: flex;
+    }
+
+    .header__search-history{
+        position: fixed;
+        width: 100%;
+        top: calc( var(--header-height) + var(--category__tablet-height) );
+    }
+    
+    .nav__overlay{
+        position: fixed;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+        animation: fadeIn linear 0.3s;
+    }
+    .menu__tablet-all{
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        width: 320px;
+        max-width: 100%;
+        background-color: #e07863; ;
+        padding: 16px 0 0 30px;
+        z-index: 6;
+        transform: translateX(-100%);
+        opacity: 1;
+        transition: transform linear 0.2s, opacity linear 0.2s;
+    }
+    .menu__tablet-close{
+        font-size: 20px;
+        color: #fff;
+    }
+    .menu__mobile-list{
+        list-style: none;
+        padding-top: 30%;
+    }
+    .menu__mobile-items{
+        width: 100%;
+        padding: 12px 0 12px 10px;
+        border-radius: 3px;
+    }
+    .menu__mobile-items:hover{
+        background-color: #ccc;
+        
+    }
+    .menu__mobile-link{
+        text-decoration: none;
+        color: #fff;;
+        font-size: 20px;
+    }
+
+    .menu__input:checked ~ .nav__overlay{
+        display: block;
+    }
+    .menu__input:checked ~ .menu__tablet-all{
+        transform: translateX(0%);
+    }
+
+    @keyframes fadeIn {
+
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+
+
+    .footer{
+        padding: 0 16px;
+    }
+    .footer__headding{
+        text-align: center;
+    }
+    .footer-list{
+        text-align: center;
+    }
+
+
+
+    .footer__bottom{
+        margin-left: -16px ;
+        margin-right: -16px ;
+    }
+}
+
+
